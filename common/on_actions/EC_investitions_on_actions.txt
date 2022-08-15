@@ -1,0 +1,21 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			
+			clear_array = global.investition_buildings_array
+			add_to_array = { global.investition_buildings_array = 1 }
+			add_to_array = { global.investition_buildings_array = 2 }
+			add_to_array = { global.investition_buildings_array = 3 }
+			add_to_array = { global.investition_buildings_array = 4 }
+			add_to_array = { global.investition_buildings_array = 5 }
+			add_to_array = { global.investition_buildings_array = 6 }
+			add_to_array = { global.investition_buildings_array = 7 }
+			add_to_array = { global.investition_buildings_array = 8 }
+			add_to_array = { global.investition_buildings_array = 9 }
+			add_to_array = { global.investition_buildings_array = 10 }
+			add_to_array = { global.investition_buildings_array = 11 }
+			add_to_array = { global.investition_buildings_array = 12 }
+		}
+	}
+	
+}

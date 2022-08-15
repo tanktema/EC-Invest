@@ -1,0 +1,215 @@
+defined_text = {
+	name = GetECInvestCost
+	
+	text = {
+		trigger = {
+			check_variable = { v = 1 }
+		}
+		localization_key = 3
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 2 }
+		}
+		localization_key = 8
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 3 }
+			THIS = {
+				eco_power_plant < 4 
+			}
+		}
+		localization_key = 2
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 3 }
+			THIS = {
+				eco_power_plant < 6 
+			}
+		}
+		localization_key = 7
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 3 }
+			THIS = {
+				eco_power_plant > 5 
+			}
+		}
+		localization_key = 12
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 4 }
+		}
+		localization_key = 10
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 5 }
+		}
+		localization_key = 34
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 6 }
+		}
+		localization_key = 13
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 7 }
+		}
+		localization_key = 18
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 8 }
+		}
+		localization_key = 15
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 9 }
+		}
+		localization_key = 22
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 10 }
+		}
+		localization_key = 18
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 11 }
+		}
+		localization_key = 13
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 12 }
+		}
+		localization_key = 5
+	} 
+	
+}
+
+
+
+defined_text = {
+	name = GetInvestTime
+	
+	text = {
+		trigger = {
+			check_variable = { v = 1 }
+		}
+		localization_key = 210
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 2 }
+		}
+		localization_key = 438 
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 3 }
+			THIS = {
+				eco_power_plant < 4 
+			}
+		}
+		localization_key = 30
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 3 }
+			THIS = {
+				eco_power_plant < 6 
+			}
+		}
+		localization_key = 210
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 3 }
+			THIS = {
+				eco_power_plant > 5 
+			}
+		}
+		localization_key = 360
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 4 }
+		}
+		localization_key = 438
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 5 }
+		}
+		localization_key = 840
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 6 }
+		}
+		localization_key = 360
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 7 }
+		}
+		localization_key = 540
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 8 }
+		}
+		localization_key = 280
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 9 }
+		}
+		localization_key = 720
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 10 }
+		}
+		localization_key = 584
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 11 }
+		}
+		localization_key = 280
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 12 }
+		}
+		localization_key = 240
+	} 

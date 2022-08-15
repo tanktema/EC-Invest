@@ -1,0 +1,188 @@
+scripted_gui = {
+	EC_investitions = {
+		context_type = selected_state_context
+		
+		parent_window_token = selected_state_view
+		
+		window_name = "investition_window" ############ Окошко гридбокса, его параметры influence_value_of@root
+		visible = {
+			check_variable = { ROOT.invest_window_visible = 1 }
+		}
+		
+		dynamic_lists = { ############### Прописывание
+			invest_states_gridbox_list = {  
+				array = global.investition_buildings_array   ##################### Массив из которого берется число элементов в сетке
+				entry_container = investition_entry  ######## Контейнер которым заполняется сетка
+			}
+		}
+		
+		effects = {
+			invest_button_click = {
+				meta_effect = {
+					text = {
+						if = {
+							limit = { ROOT = { NOT = { has_country_flag = money_trillions } } }
+							subtract_from_variable = { ROOT.budget_reserve = [INVESTCOST] }
+						}
+						else_if = {
+							limit = { ROOT = { has_country_flag = money_trillions } }  
+							set_temp_variable = { ROOT.budget_reserve_investcost = [INVESTCOST] }
+							divide_temp_variable = { ROOT.budget_reserve_investcost = 10000 }
+							subtract_from_variable = { ROOT.budget_reserve = budget_reserve_investcost }
+						}
+						THIS.Owner = { country_event = { id = ECInvest.[V] days = [INVESTTIME] } }
+					}
+					INVESTCOST = "[THIS.GetECInvestCost]"
+					INVESTTIME = "[GetInvestTime]"
+					V = "[?v]"
+				}
+				if = {
+					limit = {
+						FROM = {
+							owner = {
+								NOT = {
+									any_of = {
+										array = investors_array
+										value = ROOT
+									}
+								}
+							}
+						}
+					}
+					
+					FROM = {
+						owner = {	
+							add_to_array = { investors_array = ROOT }
+							
+						}
+					}
+					
+				}
+				FROM = {
+					if = {
+						limit = {
+							OR = {
+								check_variable = { v = 1 }
+								check_variable = { v = 3 }
+								check_variable = { v = 4 }
+								check_variable = { v = 12 }
+							}
+						}
+						owner = {
+							add_to_variable = { amount_of_invest_total = 0.5 }
+							add_to_variable = { influence_value_of@root = 0.5 }
+						}
+					}
+					else = {
+						owner = {
+							add_to_variable = { amount_of_invest_total = 0.5 }
+							add_to_variable = { influence_value_of@root = 0.5 }
+						}
+					}
+				}
+				
+			}
+		}
+		triggers = {
+			invest_button_click_enabled = {
+				if = {
+					limit = {
+						check_variable = { v = 1 }
+					}
+					AND = {
+						THIS = {
+							NOT = {
+								is_owned_by = ROOT 
+							}
+						}
+						THIS.Owner = {
+							NOT = {
+								has_idea = nationalization_of_extractive_industries
+							}
+						} 
+					} 
+				}
+				if = {
+					limit = {
+						OR = {
+							check_variable = { v = 6 }
+							check_variable = { v = 7 }
+							check_variable = { v = 8 }
+							check_variable = { v = 9 }
+							check_variable = { v = 10 }
+							check_variable = { v = 11 }
+						}
+					}
+					AND = {
+						THIS = {
+							NOT = {
+								is_owned_by = ROOT 
+							}
+						}
+						THIS.Owner = {
+							NOT = {
+								has_idea = nationalization_of_heavy_industry
+							}
+						} 
+					} 
+				}
+				
+				if = {
+					limit = {
+						NOT = {
+							OR = {
+								check_variable = { v = 3 }
+								check_variable = { v = 4 }
+								check_variable = { v = 5 }
+							}
+						}
+					}
+					AND = {
+						THIS = {
+							NOT = {
+								is_owned_by = ROOT 
+							}
+						}
+						THIS.Owner = {
+							NOT = {
+								has_idea = total_nationalization_of_industry
+							}
+						} 
+					} 
+				}
+			}
+		}
+		properties = { 
+			invest_building_icon = {
+				frame = v
+			}
+		}
+	}
+	
+	EC_investitions_button = {
+		context_type = selected_state_context
+		
+		parent_window_token = selected_state_view
+		
+		window_name = "investition_state_button" 
+		
+		
+		
+		effects = {
+			investitions_open_button_click = {
+				if = {
+					limit = {
+						check_variable = { ROOT.invest_window_visible = 1 }
+					}
+					set_variable = { ROOT.invest_window_visible = 0 }
+				}
+				else_if = {
+					limit = {
+						check_variable = { ROOT.invest_window_visible = 0 }
+					}
+					set_variable = { ROOT.invest_window_visible = 1 }
+				}
+			}
+		}
+	
+	}

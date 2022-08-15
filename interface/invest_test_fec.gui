@@ -1,0 +1,85 @@
+guiTypes = {
+	containerWindowType = {
+		name = "investition_window" ###### Окошко в котором располагается гридбокс
+		position = { x = 230 y = 11 } 
+		size = { width = 400 height = 74 }
+		orientation = center  
+		clipping = no
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300 
+		iconType = {
+			name = "invest_test_bg"
+			quadTextureSprite = "GFX_invest_window_bg"
+			position = { x = 0 y = 0 } 
+		}         
+		containerWindowType = {
+			name = "invest_grid_scroll_container"
+			position = { x = 0 y = -10 } 
+			size = {width = 250 height = 310 }  
+            margin = { top = 70 bottom = 0 } 
+			Orientation = upper_left  
+ 
+			verticalScrollbar = "right_vertical_slider"
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_invest_window_bg"
+			}
+			gridboxtype = {  
+				name = "invest_states_gridbox_list" ######## Параметры гридбокса
+				position = { x = -90 y = 5 } 
+				size = { width = 400 height = 74 }
+				slotsize = { width = 200 height = 64 }
+				max_slots_vertical = 12   
+				add_horizontal = no
+			}
+		}  
+	} 
+	containerWindowType = {  
+		name = "investition_state_button"
+		position = { x = -180 y = 155 } 
+		size = { width = 400 height = 74 }
+		orientation = center  
+		
+		buttonType = {
+			name = "investitions_open_button"
+			quadTextureSprite = "GFX_invest_button" 
+			position = { x = 0 y = 0 }
+			buttonText = "investition"
+			buttonFont = "hoi_18mbs"
+			shortcut = "i"
+		}
+	}
+		
+		
+	containerWindowType = {	
+		name = "investition_entry" ################### "Единица" гридбокса, контейнеры которые закладываются в "сетку"
+		position = { x = 0 y = 0 }
+		size = { width = 400 height = 74 }
+
+		background = { 
+			name = "investition_bg"
+			quadTextureSprite = "GFX_invest_invest_bg"
+		}  
+		iconType = {
+			name = "invest_building_icon"
+			quadTextureSprite = "GFX_invest_buildings"   
+			alwaystransparent = yes
+			position = { x = 7 y = 6 }  
+		} 
+		
+		buttonType = {
+			name = "invest_button"
+			quadTextureSprite = "GFX_invest_button"
+			position = { x = 71 y = 10 }
+			buttonText = "invest"
+			buttonFont = "hoi_18mbs"
+		}
+		instantTextBoxType = {  
+			name = "invest_cost"   
+			position = { x = 15 y = 38 }
+			font = "hoi_18mbs" 
+			text = "invest_cost" 
+			format = center    
+		}  
+	}

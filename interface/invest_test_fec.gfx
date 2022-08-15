@@ -1,0 +1,23 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_invest_buildings"
+		texturefile = "gfx/interface/invest/invest_buildings_strip.dds"
+		noOfframes = 12
+	}
+	
+	spriteType = {
+		name = "GFX_invest_invest_bg"
+		texturefile = "gfx/interface/invest/invest_bg.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_invest_window_bg"
+		texturefile = "gfx/interface/invest/invest_window_bg.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_invest_button"
+		texturefile = "gfx/interface/invest/invest_button.dds"
+	}
+	
+}
