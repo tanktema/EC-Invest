@@ -83,3 +83,15 @@ guiTypes = {
 			format = center    
 		}  
 	}
+	
+	
+	containerWindowType = {
+		name = "investition_country_list"
+		position = { x = 230 y = 11 } 
+		size = { width = 400 height = 74 }
+		orientation = center  
+		clipping = no
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300 
+	}
