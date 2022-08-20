@@ -87,11 +87,112 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "investition_country_list"
-		position = { x = 230 y = 11 } 
-		size = { width = 400 height = 74 }
-		orientation = center  
+		position = { x = -270 y = 343 }
+		show_position = { x = 10 y = 343 }
+		size = { width = 260 height = 260 }
+		###orientation = center   
 		clipping = no
-		show_animation_type = decelerated
+		show_animation_type = accelerated
 		hide_animation_type = accelerated
-		animation_time = 300 
+		animation_time = 600 
+		
+		
+		iconType = {
+			name = "invest_bg_country"
+			quadTextureSprite = "GFX_country_invest_bg" 
+			position = { x = 10 y = 10 }
+		}
+		
+		containerWindowType = {
+			name = "invest_country_grid_scroll_container"
+			position = { x = 15 y = 80 }  
+			size = {width = 250 height = 250 }  
+            margin = { top = 0 bottom = 40 }  
+			Orientation = upper_left 
+			clipping = no
+			verticalScrollbar = "right_vertical_slider"
+			
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_country_invest_grid_bg"
+			}
+			gridboxtype = {   
+				name = "investors_country_list" 
+				position = { x = -8 y = 0 } 
+				size = { width = 250 height = 180 }
+				slotsize = { width = 200 height = 18 }
+				max_slots_vertical = 999   
+				add_horizontal = no
+			}
+			
+			gridboxtype = {   
+				name = "investors_country_values_list"
+				position = { x = -8 y = 0 } 
+				size = { width = 250 height = 180 }
+				slotsize = { width = 45 height = 18 }
+				max_slots_vertical = 999   
+				add_horizontal = no
+			}
+		}  
+		
 	}
+	
+		
+	containerWindowType = {	
+		name = "investition_entry_country"
+		position = { x = 0 y = 0 }
+		size = { width = 400 height = 74 }
+
+		instantTextBoxType = {
+			name = "country_invest_name_flag"
+			position = { x = -10 y = 12 }
+			font = "hoi_18mbs"  
+			text = "[?v.GetFlag][?v.GetName]"  
+			format = left
+			maxWidth = 200
+			maxHeight = 18
+			fixedsize = yes
+		}   
+		
+		
+	} 
+	containerWindowType = {	 
+		name = "investition_entry_country_value"
+		position = { x = 0 y = 0 }
+		size = { width = 400 height = 74 }
+ 
+		instantTextBoxType = { 
+			name = "country_invest_value"  
+			position = { x = 95 y = 12 } 
+			font = "hoi_18mbs"   
+			text = "[?v|%1]"    
+			format = left 
+			maxWidth = 65
+			maxHeight = 18
+			fixedsize = no
+		} 
+		
+	}
+	  
+	containerWindowType = {
+		name = "country_invest_toggle_button"
+		position = { x = 10 y = 300 }
+		size = { width = 30 height = 30 }
+			
+		buttonType = {
+			name = "country_invest_btn_show"
+			quadTextureSprite = "GFX_country_invest_btn_show"
+			position = { x = 10 y = 10 }
+			pdx_tooltip = "ECI_show_investors"
+		}
+		
+		buttonType = {
+			name = "country_invest_btn_hide"
+			quadTextureSprite = "GFX_country_invest_btn_hide"
+			position = { x = 10 y = 10 }
+			pdx_tooltip = "ECI_hide_investors"
+		}
+		
+	}
+		
+}

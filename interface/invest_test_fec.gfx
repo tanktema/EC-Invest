@@ -10,7 +10,7 @@ spriteTypes = {
 		texturefile = "gfx/interface/invest/invest_bg.dds"
 	}
 	
-	spriteType = {
+	spriteType = { 
 		name = "GFX_invest_window_bg"
 		texturefile = "gfx/interface/invest/invest_window_bg.dds"
 	}
@@ -20,4 +20,23 @@ spriteTypes = {
 		texturefile = "gfx/interface/invest/invest_button.dds"
 	}
 	
+	spriteType = {
+		name = "GFX_country_invest_bg"
+		texturefile = "gfx/interface/invest/invest_country_bg.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_country_invest_btn_show"
+		texturefile = "gfx/interface/invest/arrow_down_small.dds"
+	}
+	  
+	spriteType = {
+		name = "GFX_country_invest_btn_hide"
+		texturefile = "gfx/interface/invest/arrow_up_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_country_invest_grid_bg"
+		texturefile = "gfx/interface/invest/invest_grid_bg.dds"
+	}
 }

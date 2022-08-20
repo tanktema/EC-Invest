@@ -1,0 +1,107 @@
+
+ECI_validate_country_value_arrays = {
+	clear_array = investors_influences_array
+	
+	set_temp_variable = { current_influence_of_root = 0 }
+	every_owned_state = {
+		add_to_temp_variable = { prev.current_influence_of_root = building_level@infrastructure }
+		add_to_temp_variable = { prev.current_influence_of_root = building_level@fuel_silo }
+		add_to_temp_variable = { prev.current_influence_of_root = building_level@thermal_power_plant }
+		add_to_temp_variable = { prev.current_influence_of_root = building_level@solar_power_plant }
+		add_to_temp_variable = { prev.current_influence_of_root = building_level@gidro_power_plant }
+		add_to_temp_variable = { prev.current_influence_of_root = building_level@wind_power_plant }
+		
+	}
+	divide_temp_variable = { current_influence_of_root = 2 }
+	subtract_from_temp_variable = { current_influence_of_root = invest_amount_of_invest_total_small }
+	every_owned_state = {
+		add_to_temp_variable = { prev.current_influence_of_root = building_level@industrial_complex }
+		add_to_temp_variable = { prev.current_influence_of_root = building_level@nuclear_reactor }
+		add_to_temp_variable = { prev.current_influence_of_root = building_level@steel_factory }
+		add_to_temp_variable = { prev.current_influence_of_root = building_level@alloy_steel_factory }
+		add_to_temp_variable = { prev.current_influence_of_root = building_level@aluminium_factory }
+		add_to_temp_variable = { prev.current_influence_of_root = building_level@uran_factory }
+		add_to_temp_variable = { prev.current_influence_of_root = building_level@rare_earth_factory }
+		add_to_temp_variable = { prev.current_influence_of_root = building_level@synthetic_refinery }
+	}
+	subtract_from_temp_variable = { current_influence_of_root = invest_amount_of_invest_total_big }
+	set_variable = { influence_value_of@root = current_influence_of_root }
+	for_each_loop = {
+		array = investors_array 
+		
+		meta_effect = {
+			text = {
+				set_temp_variable = { influence_by_tag = 0 }
+				every_owned_state = {
+					add_to_temp_variable = { prev.influence_by_tag = building_level@infrastructure }
+					add_to_temp_variable = { prev.influence_by_tag = building_level@fuel_silo }
+					add_to_temp_variable = { prev.influence_by_tag = building_level@thermal_power_plant }
+					add_to_temp_variable = { prev.influence_by_tag = building_level@solar_power_plant }
+					add_to_temp_variable = { prev.influence_by_tag = building_level@gidro_power_plant }
+					add_to_temp_variable = { prev.influence_by_tag = building_level@wind_power_plant }
+					
+				}
+				divide_temp_variable = { influence_by_tag = 2 }
+				every_owned_state = {
+					add_to_temp_variable = { prev.influence_by_tag = building_level@industrial_complex }
+					add_to_temp_variable = { prev.influence_by_tag = building_level@nuclear_reactor }
+					add_to_temp_variable = { prev.influence_by_tag = building_level@steel_factory }
+					add_to_temp_variable = { prev.influence_by_tag = building_level@alloy_steel_factory }
+					add_to_temp_variable = { prev.influence_by_tag = building_level@aluminium_factory }
+					add_to_temp_variable = { prev.influence_by_tag = building_level@uran_factory }
+					add_to_temp_variable = { prev.influence_by_tag = building_level@rare_earth_factory }
+					add_to_temp_variable = { prev.influence_by_tag = building_level@synthetic_refinery }
+				}
+				set_temp_variable = { tag_influence_marker = influence_value_of@[INVESTORTAG] }
+				divide_temp_variable = { tag_influence_marker = influence_by_tag }
+				set_variable = { influence_value_percent@[INVESTORTAG] = tag_influence_marker }
+				clamp_variable = { var = influence_value_percent@[INVESTORTAG] min = 0 max = 100 }
+				add_to_array = {
+					investors_influences_array = influence_value_percent@[INVESTORTAG]
+				}
+			}
+			INVESTORTAG = "[?v.GetTag]"
+		}
+	}	
+}
+
+ECI_sort_investition_array = {
+	for_each_loop = {
+		array = investors_influences_array
+		
+		find_highest_in_array = {
+			array = investors_influences_array
+			value = v
+			index = i 
+		}		
+		
+		add_to_temp_array = {
+			array = influence_sort_array_tags
+			value = investors_array^i
+		}
+		remove_from_array = {
+			array = investors_influences_array
+			value = v 
+		}
+	}
+	clear_array = investors_array
+	for_each_loop = {
+		array = influence_sort_array_tags
+		add_to_array = { investors_array = v }
+	}
+	clear_array = investors_influences_array
+	for_each_loop = {
+		array = investors_array 
+		
+		meta_effect = {
+			text = {
+			add_to_array = {
+					investors_influences_array = influence_value_percent@[INVESTORTAG]
+				}
+			}
+			INVESTORTAG = "[?v.GetTag]"
+		}
+	}		
+} 
+
+	

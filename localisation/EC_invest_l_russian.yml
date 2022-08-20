@@ -1,2 +1,5 @@
 ﻿l_russian:
     invest_cost:0 "[THIS.GetECInvestCost] млн. $"
+    investor_country_flag_name:0 "111  11"
+    investor_country_infl:0 "[FROM.influence_value_of@v|%2]"
+    infl_amount:0 "[?v.influence_value_of@PREV]%"

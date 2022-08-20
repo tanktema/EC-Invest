@@ -213,3 +213,10 @@ defined_text = {
 		}
 		localization_key = 240
 	} 
+}
+
+
+defined_text = {
+	name = GetInvestorCountry
+	text = {
+		

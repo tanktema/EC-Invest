@@ -41,9 +41,10 @@ scripted_gui = {
 						FROM = {
 							owner = {
 								NOT = {
-									any_of = {
+									is_in_array = {
 										array = investors_array
 										value = ROOT
+										
 									}
 								}
 							}
@@ -67,16 +68,28 @@ scripted_gui = {
 								check_variable = { v = 4 }
 								check_variable = { v = 12 }
 							}
+							ROOT = {
+								NOT = { owns_state = FROM }
+							}
 						}
 						owner = {
-							add_to_variable = { amount_of_invest_total = 0.5 }
+							add_to_variable = { invest_amount_of_invest_total_small = 0.5 }
 							add_to_variable = { influence_value_of@root = 0.5 }
+							
+							###ECI_validate_country_value_arrays = yes
 						}
 					}
-					else = {
+					else_if = {
+						limit = {
+							ROOT = {
+								NOT = { owns_state = FROM }
+							}
+						}
 						owner = {
-							add_to_variable = { amount_of_invest_total = 0.5 }
-							add_to_variable = { influence_value_of@root = 0.5 }
+							add_to_variable = { invest_amount_of_invest_total_big = 1 }
+							add_to_variable = { influence_value_of@root = 1 }
+							
+							###ECI_validate_country_value_arrays = yes
 						}
 					}
 				}
@@ -85,6 +98,8 @@ scripted_gui = {
 		}
 		triggers = {
 			invest_button_click_enabled = {
+				owner = { has_war = no }
+				ROOT = { has_war = no }
 				if = {
 					limit = {
 						check_variable = { v = 1 }
@@ -187,4 +202,54 @@ scripted_gui = {
 	
 	}
 	
+	EC_invest_toggle_button = {
+		context_type = selected_country_context
+		parent_window_token = selected_country_view_diplomacy 
+		window_name = "country_invest_toggle_button"
+		
+		effects = {
+			country_invest_btn_show_click = {
+				set_variable = { invest_list_visible = 1 }
+			}
+			country_invest_btn_hide_click = {
+				set_variable = { invest_list_visible = 0 }
+			}
+			
+		}
+		
+		triggers = {
+			country_invest_btn_hide_visible = {
+				check_variable = { invest_list_visible = 1 }
+			}
+			country_invest_btn_show_visible = {
+				OR = {
+					check_variable = { invest_list_visible = 0 }
+					NOT = { has_variable = invest_list_visible }
+				}
+			}
+		}
+		
+	}
+	
+	EC_investitions_country = {
+		context_type = selected_country_context
+		parent_window_token = selected_country_view_diplomacy 
+		window_name = "investition_country_list"
+	
+		visible = {
+			check_variable = { invest_list_visible = 1 }
+		}
+		
+		dynamic_lists = { 
+			investors_country_list = {  
+				array = FROM.investors_array  
+				entry_container = investition_entry_country 
+			}
+			investors_country_values_list = {  
+				array = FROM.investors_influences_array  
+				entry_container = investition_entry_country_value 
+			}
+		}
+		
+	}
 	

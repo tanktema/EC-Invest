@@ -13,6 +13,12 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			owner = {
+				ECI_validate_country_value_arrays = yes 
+			}
+		}
+		FROM = {
+			add_to_variable = { budget_reserve = 3 }
 		}
 	}
 }
@@ -31,6 +37,12 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			owner = {
+				ECI_validate_country_value_arrays = yes 
+			}
+		}
+		FROM = {
+			add_to_variable = { budget_reserve = 8 }
 		}
 	}
 }
@@ -48,6 +60,29 @@ country_event = {
 				type = eco_power_plant
 				level = 1
 				instant_build = yes 
+			}
+			owner = {
+				ECI_validate_country_value_arrays = yes 
+			}
+		}
+		FROM = {
+			if = {
+				limit = {
+					FROM.FROM =  { check_variable = { eco_power_plant < 4 } }
+				}
+				add_to_variable = { budget_reserve = 2 } 
+			}
+			if = {
+				limit = {
+					FROM.FROM =  { check_variable = { eco_power_plant < 6 } }
+				}
+				add_to_variable = { budget_reserve = 7 } 
+			}
+			if = {
+				limit = {
+					FROM.FROM =  { check_variable = { eco_power_plant > 5 } }
+				}
+				add_to_variable = { budget_reserve = 12 } 
 			}
 		}
 	}
@@ -68,6 +103,12 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			owner = {
+				ECI_validate_country_value_arrays = yes 
+			}
+		}
+		FROM = {
+			add_to_variable = { budget_reserve = 10 }
 		}
 	}
 }
@@ -87,6 +128,12 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			owner = {
+				ECI_validate_country_value_arrays = yes 
+			}
+		}
+		FROM = {
+			add_to_variable = { budget_reserve = 34 }
 		}
 	}
 }
@@ -106,6 +153,12 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			owner = {
+				ECI_validate_country_value_arrays = yes 
+			}
+		}
+		FROM = {
+			add_to_variable = { budget_reserve = 13 }
 		}
 	}
 }
@@ -125,6 +178,12 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			owner = {
+				ECI_validate_country_value_arrays = yes 
+			}
+		}
+		FROM = {
+			add_to_variable = { budget_reserve = 18 }
 		}
 	}
 }
@@ -145,6 +204,12 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			owner = {
+				ECI_validate_country_value_arrays = yes 
+			}
+		}
+		FROM = {
+			add_to_variable = { budget_reserve = 15 }
 		}
 	}
 }
@@ -164,6 +229,12 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			owner = {
+				ECI_validate_country_value_arrays = yes 
+			}
+		}
+		FROM = {
+			add_to_variable = { budget_reserve = 22 }
 		}
 	}
 }
@@ -183,6 +254,12 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			owner = {
+				ECI_validate_country_value_arrays = yes 
+			}
+		}
+		FROM = {
+			add_to_variable = { budget_reserve = 18 }
 		}
 	}
 }
@@ -204,6 +281,12 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			owner = {
+				ECI_validate_country_value_arrays = yes 
+			}
+		}
+		FROM = {
+			add_to_variable = { budget_reserve = 13 }
 		}
 	}
 }
@@ -224,6 +307,12 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			owner = {
+				ECI_validate_country_value_arrays = yes 
+			}
+		}
+		FROM = {
+			add_to_variable = { budget_reserve = 5 }
 		}
 	}
 }
