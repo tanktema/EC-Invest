@@ -30,7 +30,7 @@ guiTypes = {
 				position = { x = -90 y = 5 } 
 				size = { width = 400 height = 74 }
 				slotsize = { width = 200 height = 64 }
-				max_slots_vertical = 12   
+				max_slots_vertical = 14   
 				add_horizontal = no
 			}
 		}  
@@ -67,13 +67,14 @@ guiTypes = {
 			alwaystransparent = yes
 			position = { x = 7 y = 6 }  
 		} 
-		
+		 
 		buttonType = {
 			name = "invest_button"
 			quadTextureSprite = "GFX_invest_button"
 			position = { x = 71 y = 10 }
 			buttonText = "invest"
 			buttonFont = "hoi_18mbs"
+			pdx_tooltip = "invest_tt"
 		}
 		instantTextBoxType = {  
 			name = "invest_cost"   
@@ -109,7 +110,7 @@ guiTypes = {
 			size = {width = 250 height = 250 }  
             margin = { top = 0 bottom = 40 }  
 			Orientation = upper_left 
-			clipping = no
+			clipping = yes
 			verticalScrollbar = "right_vertical_slider"
 			
 			background = {

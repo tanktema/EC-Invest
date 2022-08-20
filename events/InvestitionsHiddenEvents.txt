@@ -13,12 +13,14 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			clr_state_flag = invest_1_by@from
 			owner = {
 				ECI_validate_country_value_arrays = yes 
 			}
 		}
 		FROM = {
 			add_to_variable = { budget_reserve = 3 }
+			
 		}
 	}
 }
@@ -37,6 +39,7 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			clr_state_flag = invest_2_by@from
 			owner = {
 				ECI_validate_country_value_arrays = yes 
 			}
@@ -57,34 +60,19 @@ country_event = {
 	immediate = {
 		FROM.FROM = {
 			add_building_construction = { 
-				type = eco_power_plant
+				type = solar_power_plant
 				level = 1
 				instant_build = yes 
 			}
+			clr_state_flag = invest_3_by@from
 			owner = {
 				ECI_validate_country_value_arrays = yes 
 			}
 		}
 		FROM = {
-			if = {
-				limit = {
-					FROM.FROM =  { check_variable = { eco_power_plant < 4 } }
-				}
-				add_to_variable = { budget_reserve = 2 } 
-			}
-			if = {
-				limit = {
-					FROM.FROM =  { check_variable = { eco_power_plant < 6 } }
-				}
-				add_to_variable = { budget_reserve = 7 } 
-			}
-			if = {
-				limit = {
-					FROM.FROM =  { check_variable = { eco_power_plant > 5 } }
-				}
-				add_to_variable = { budget_reserve = 12 } 
-			}
+			add_to_variable = { budget_reserve = 2 } 
 		}
+			
 	}
 }
 
@@ -103,6 +91,7 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			clr_state_flag = invest_4_by@from
 			owner = {
 				ECI_validate_country_value_arrays = yes 
 			}
@@ -128,6 +117,7 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			clr_state_flag = invest_5_by@from
 			owner = {
 				ECI_validate_country_value_arrays = yes 
 			}
@@ -153,6 +143,7 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			clr_state_flag = invest_6_by@from
 			owner = {
 				ECI_validate_country_value_arrays = yes 
 			}
@@ -178,6 +169,7 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			clr_state_flag = invest_7_by@from
 			owner = {
 				ECI_validate_country_value_arrays = yes 
 			}
@@ -204,6 +196,7 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			clr_state_flag = invest_8_by@from
 			owner = {
 				ECI_validate_country_value_arrays = yes 
 			}
@@ -229,6 +222,7 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			clr_state_flag = invest_9_by@from
 			owner = {
 				ECI_validate_country_value_arrays = yes 
 			}
@@ -254,6 +248,7 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			clr_state_flag = invest_10_by@from
 			owner = {
 				ECI_validate_country_value_arrays = yes 
 			}
@@ -281,6 +276,7 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			clr_state_flag = invest_11_by@from
 			owner = {
 				ECI_validate_country_value_arrays = yes 
 			}
@@ -307,12 +303,65 @@ country_event = {
 				level = 1
 				instant_build = yes 
 			}
+			clr_state_flag = invest_12_by@from
 			owner = {
 				ECI_validate_country_value_arrays = yes 
 			}
 		}
 		FROM = {
 			add_to_variable = { budget_reserve = 5 }
+		}
+	}
+}
+
+
+country_event = {
+	id = ECInvest.13
+	
+	hidden = yes 
+	is_triggered_only = yes 
+	
+	immediate = {
+		FROM.FROM = {
+			add_building_construction = { 
+				type = wind_power_plant
+				level = 1
+				instant_build = yes 
+			}
+			clr_state_flag = invest_13_by@from
+			owner = {
+				ECI_validate_country_value_arrays = yes 
+			}
+		}
+		FROM = {
+			add_to_variable = { budget_reserve = 7 }
+		}
+	}
+}
+
+
+
+
+country_event = {
+	id = ECInvest.14
+	
+	hidden = yes 
+	is_triggered_only = yes 
+	
+	immediate = {
+		FROM.FROM = {
+			add_building_construction = { 
+				type = gidro_power_plant
+				level = 1
+				instant_build = yes 
+			}
+			clr_state_flag = invest_14_by@from
+			owner = {
+				ECI_validate_country_value_arrays = yes 
+			}
+		}
+		FROM = {
+			add_to_variable = { budget_reserve = 12 }
 		}
 	}
 }

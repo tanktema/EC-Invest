@@ -15,6 +15,8 @@ on_actions = {
 			add_to_array = { global.investition_buildings_array = 10 }
 			add_to_array = { global.investition_buildings_array = 11 }
 			add_to_array = { global.investition_buildings_array = 12 }
+			add_to_array = { global.investition_buildings_array = 13 }
+			add_to_array = { global.investition_buildings_array = 14 }
 			every_country = {
 				clear_array = investors_array
 				add_to_array = { investors_array = THIS }

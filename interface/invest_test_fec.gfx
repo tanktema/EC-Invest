@@ -2,7 +2,7 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_invest_buildings"
 		texturefile = "gfx/interface/invest/invest_buildings_strip.dds"
-		noOfframes = 12
+		noOfframes = 14
 	}
 	
 	spriteType = {

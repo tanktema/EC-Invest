@@ -16,28 +16,21 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = { v = 3 }
-			THIS = {
-				eco_power_plant < 4 
-			}
 		}
 		localization_key = 2
 	}
 	text = {
 		trigger = {
-			check_variable = { v = 3 }
-			THIS = {
-				eco_power_plant < 6 
-			}
+			check_variable = { v = 13 }
+			
 		}
 		localization_key = 7
 	}
 	
 	text = {
 		trigger = {
-			check_variable = { v = 3 }
-			THIS = {
-				eco_power_plant > 5 
-			}
+			check_variable = { v = 14 }
+			
 		}
 		localization_key = 12
 	}
@@ -126,30 +119,8 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = { v = 3 }
-			THIS = {
-				eco_power_plant < 4 
-			}
 		}
 		localization_key = 30
-	}
-	text = {
-		trigger = {
-			check_variable = { v = 3 }
-			THIS = {
-				eco_power_plant < 6 
-			}
-		}
-		localization_key = 210
-	}
-	
-	text = {
-		trigger = {
-			check_variable = { v = 3 }
-			THIS = {
-				eco_power_plant > 5 
-			}
-		}
-		localization_key = 360
 	}
 	text = {
 		trigger = {
@@ -212,11 +183,119 @@ defined_text = {
 			check_variable = { v = 12 }
 		}
 		localization_key = 240
-	} 
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 13 }
+			
+		}
+		localization_key = 210
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 14 }
+			
+		}
+		localization_key = 360
+	}	
 }
 
 
 defined_text = {
-	name = GetInvestorCountry
+	name = GetECITooltip
 	text = {
-		
+		trigger = {
+			check_variable = { v = 1 }
+		}
+		localization_key = ECI_tooltip_1
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 2 }
+		}
+		localization_key = ECI_tooltip_2
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 3 }
+		}
+		localization_key = ECI_tooltip_3
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 13 }
+			
+		}
+		localization_key = ECI_tooltip_13
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 14 }
+			
+		}
+		localization_key = ECI_tooltip_14
+	}
+	text = {
+		trigger = {
+			check_variable = { v = 4 }
+		}
+		localization_key = ECI_tooltip_4
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 5 }
+		}
+		localization_key = ECI_tooltip_5
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 6 }
+		}
+		localization_key = ECI_tooltip_6
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 7 }
+		}
+		localization_key = ECI_tooltip_7
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 8 }
+		}
+		localization_key = ECI_tooltip_8
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 9 }
+		}
+		localization_key = ECI_tooltip_9
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 10 }
+		}
+		localization_key = ECI_tooltip_10
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 11 }
+		}
+		localization_key = ECI_tooltip_11
+	}
+	
+	text = {
+		trigger = {
+			check_variable = { v = 12 }
+		}
+		localization_key = ECI_tooltip_12
+	} 

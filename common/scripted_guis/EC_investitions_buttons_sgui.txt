@@ -31,6 +31,7 @@ scripted_gui = {
 							subtract_from_variable = { ROOT.budget_reserve = budget_reserve_investcost }
 						}
 						THIS.Owner = { country_event = { id = ECInvest.[V] days = [INVESTTIME] } }
+						FROM = { set_state_flag = invest_[V]_by@root }
 					}
 					INVESTCOST = "[THIS.GetECInvestCost]"
 					INVESTTIME = "[GetInvestTime]"
@@ -100,6 +101,19 @@ scripted_gui = {
 			invest_button_click_enabled = {
 				owner = { has_war = no }
 				ROOT = { has_war = no }
+				meta_trigger = {
+					text = {
+						NOT = { has_state_flag = invest_[V]_by@root }
+						check_variable = { 
+							var = ROOT.budget_reserve 
+							value = [INVESTCOST]
+							compare = greater_than_or_equals
+						}
+					}
+					V = "[?v]"
+					INVESTCOST = "[THIS.GetECInvestCost]"
+				}
+				
 				if = {
 					limit = {
 						check_variable = { v = 1 }
@@ -164,6 +178,27 @@ scripted_gui = {
 							}
 						} 
 					} 
+				}
+				
+				if = {
+					limit = {
+						check_variable = { v = 14 }
+					}
+					THIS = { 
+						has_state_flag = can_build_gidro_plants
+					}
+				}
+				
+				if = {
+					limit = {
+						check_variable = { v = 5 }
+					}
+					ROOT = {
+						OR = {
+							has_idea = nuclear_country
+							has_country_flag = open_nuclear_tech
+						}
+					}
 				}
 			}
 		}
